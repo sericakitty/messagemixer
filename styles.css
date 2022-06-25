@@ -1,0 +1,304 @@
+/* Reset browser formatting */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Root pseudo class for variables - changing site color theme here, easy to maintain */
+:root {
+  /* headers, highlighted, hearts, nav highlights, nav link active */
+  --main-header-color: #FE68E6;
+  /* background */
+  --main-bg-color: #ffd1f7;
+  /* text and footer */
+  --main-text-color: #8b0475;
+  /* link coloring */
+  --main-link-color: rgb(210, 82, 214);
+  /* link hovering */
+  --link-hover-color: magenta;
+  /* transition duration when hovering a nav link */
+  --link-transition-duration: 500ms;
+  /* navbar background */
+  --navbar-bg-color: #FF98EF;
+  /* navbar link */
+  --navbar-link-color: #ffffff;
+  /* btn disabled color */
+  --btn-disabled-color: gray;
+  /*Source code color*/
+  --src-code-color: rgb(67, 172, 207);
+  --src-code-hover: rgb(0, 144, 155);
+
+  /* apps */
+  --input-bg-color: #f0b4e6;
+  --btn-bg-color: #f56dde;
+  --btn-border-color: #f88de6;
+  --btn-text-color: #ffffff;
+  --btn-focus-color: #dfbafd;
+  --main-border-color: rgb(191, 135, 236);
+  --text-priority-color: magenta;
+
+  /*Debugging .test class border color*/
+  --test-border-color: red;
+}
+
+/* Styling everything -------------------------------------- */
+
+body {
+  background: var(--main-bg-color);
+  margin: auto;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+main {
+  width: 85%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--main-header-color);
+  text-align: center;
+  font-size: 34px;
+  padding-bottom: 25px;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+h2 {
+  color: var(--main-header-color);
+  font-size: 25px;
+  padding: 15px 0px 15px 0px;
+  margin: 10px 0px 0px 0px;
+}
+
+h3 {
+  color: var(--main-header-color);
+  font-size: 150%;
+  padding: 15px 0px 10px 0px;
+  margin: 10px 0px 0px 0px;
+}
+
+p {
+  color: var(--main-text-color);
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+input {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.description_box {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/* Container just for centering elements --------------------------------------------- */
+.centeringcontainer {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+/* Link elements color and hovered color */
+
+a {
+  color: var(--main-link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+
+/* For app displays setting font color in div elements */
+
+div {
+  color: var(--main-text-color);
+}
+
+
+/* Image styling */
+
+.profilepic {
+  width: 100%;
+  max-width: 300px;
+  float: right;
+  margin: 5px 0px 10px 30px;
+}
+
+img {
+  border-radius: 12px;
+}
+
+/* Styling all input & text area elements */
+
+input,
+textarea {
+  margin-bottom: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--main-border-color);
+  background-color: var(--input-bg-color);
+  color: var(--main-text-color);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+
+/* For fixing footer to bottom. Apply to main container, so main is min 80% viewport height and footer is pushed to bottom */
+.footerfixer {
+  min-height: 80vh;
+}
+
+/* Footer */
+.footer {
+  color: var(--main-text-color);
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Source code link styling */
+
+.srccode {
+  text-align: center;
+  font-size: 22px;
+  margin: 0px 0px 25px 0px;
+}
+
+.srccodelink {
+  color: var(--src-code-color);
+}
+
+.srccodelink:hover {
+  color: var(--src-code-hover);
+}
+
+/* .textwrapper class wraps text so it doesn't go over the border */
+.textwrapper {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+/* Highlighting links */
+
+.highlighted {
+  font-size: 25px;
+}
+
+
+
+/* Styling the centered bootstrap navbar ------------------------------- */
+
+.navbar {
+  background-color: var(--navbar-bg-color);
+  margin-bottom: 20px;
+  font-size: 120%;
+  padding: 0px;
+  box-shadow: 0 2px 2px -2px var(--navbar-bg-color);
+}
+
+/* Styling link text color for bootstrap navbar */
+
+.navtext {
+  color: var(--navbar-link-color);
+}
+
+
+
+.active {
+  color: var(--main-header-color);
+}
+
+.navbar li a:hover {
+  color: var(--main-header-color);
+  transition-duration: var(--link-transition-duration);
+  text-decoration: none;
+}
+
+
+.dropdown-menu {
+  background-color: var(--navbar-bg-color);
+}
+
+.dropdown-menu a {
+  color: var(--navbar-link-color);
+}
+
+.dropdown-item:hover {
+  background-color: var(--navbar-bg-color);
+  color: var(--main-header-color);
+}
+
+
+
+/* TEMPORARY FIX FOR COLOR PROBLEM IN NAV BAR */
+.navtext:not(:active) {
+  color: var(--navbar-link-color);
+}
+
+
+
+
+/* Apps ----------------------------------------------------------------------------- */
+
+/* Overwriting bootstrap classes to style buttons -------------------- */
+
+.btn {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: 1px solid var(--btn-border-color);
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.btn:hover {
+  background-color: var(--main-header-color);
+  border: 1px solid var(--btn-border-color);
+}
+
+.btn:disabled {
+  background-color: var(--btn-disabled-color);
+  border: 1px solid var(--main-text-color);
+  color: var(--main-text-color);
+}
+
+
+.btn:focus {
+  color: var(--btn-focus-color);
+}
+
+
+.btn:active:enabled {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 0px 0px 5px 1px var(--main-header-color);
+  /* Lowering the shadow */
+}
+
+
+
+
+
+/* Message mixer */
+
+.mixertextarea {
+  width: 300px;
+}
+
+.mixerbtncontainer {
+  margin-bottom: 20px;
+  width: 300px;
+  margin: auto;
+}
